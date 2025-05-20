@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Sweet Delights Bakery</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8b5a4b;
+            --secondary-color: #f8e3dd;
+            --accent-color: #d68c45;
+            --text-dark: #2c1810;
+            --text-light: #6c757d;
+            --white: #ffffff;
+        }
+        
+        body {
+            background-color: var(--secondary-color);
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+        
+        .about-container {
+            background-color: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            padding: 40px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .about-header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .about-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .about-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+        
+        .about-header:after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 15px auto;
+        }
+        
+        .nav-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin: 10px 5px;
+        }
+        
+        .nav-btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            color: var(--white);
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px dashed var(--accent-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title i {
+            margin-right: 15px;
+            color: var(--accent-color);
+            font-size: 24px;
+        }
+        
+        .about-section {
+            margin-bottom: 40px;
+        }
+        
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            transition: all 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .value-card {
+            background-color: #faf6f3;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .value-icon {
+            background-color: var(--secondary-color);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .value-icon i {
+            color: var(--accent-color);
+            font-size: 24px;
+        }
+        
+        .value-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .team-card {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .team-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 5px solid var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .team-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .team-name {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .team-title {
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            margin: 0 5px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--accent-color);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .timeline:before {
+            content: "";
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -50px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--white);
+            border: 2px solid var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .timeline-dot i {
+            color: var(--accent-color);
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .timeline-content {
+            background-color: #faf6f3;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .timeline-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .testimonial-card {
+            background-color: #faf6f3;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .testimonial-quote {
+            font-size: 18px;
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        /* .testimonial-quote:before {
+            content: """;
+            font-size: 60px;
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-color);
+            opacity: 0.3;
+            position: absolute;
+            left: -10px;
+            top: -15px;
+        } */
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-name {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0;
+        }
+        
+        .testimonial-location {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+        
+        .stats-card {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            height: 100%;
+        }
+        
+        .stats-number {
+            font-size: 3rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .stats-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        
+        .faq-question {
+            background-color: #faf6f3;
+            color: var(--primary-color);
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .faq-answer {
+            padding: 15px 20px;
+            border-radius: 0 0 10px 10px;
+            margin-top: 5px;
+            background-color: var(--white);
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .faq-item.active .faq-question {
+            border-radius: 10px 10px 0 0;
+        }
+        
+        @media (max-width: 767px) {
+            .about-container {
+                padding: 25px;
+            }
+            
+            .about-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .timeline {
+                padding-left: 40px;
+            }
+            
+            .timeline-dot {
+                left: -40px;
+                width: 30px;
+                height: 30px;
+            }
+        }
+        .social-connect {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 30px;
+    }
+    
+    .social-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: var(--text-dark);
+        transition: all 0.3s ease;
+        background-color: #faf6f3;
+        padding: 20px;
+        border-radius: 15px;
+        width: 180px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .social-link:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        color: var(--primary-color);
+    }
+    
+    .social-link .value-icon {
+        margin-bottom: 15px;
+    }
+    
+    .social-link h5 {
+        margin-bottom: 5px;
+        font-weight: 600;
+    }
+    
+    .social-link p {
+        font-size: 0.85rem;
+        margin-bottom: 0;
+        color: var(--text-light);
+    }
+    
+    @media (max-width: 767px) {
+        .social-connect {
+            gap: 15px;
+        }
+        
+        .social-link {
+            width: 140px;
+            padding: 15px;
+        }
+    }
+    </style>
+    <link rel="stylesheet" href="/css/navbar.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="#hero">COOKIES</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button" data-bs-toggle="dropdown">
+                            Menu
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+                            <li><a class="dropdown-item" href="/signature.html">Signature Items</a></li>
+                            <li><a class="dropdown-item" href="/pages/brownie.html">Soft Brownies</a></li>
+                            <li><a class="dropdown-item" href="/pages/cheesecae.html">Sweet Cheesecake</a></li>
+                            <li><a class="dropdown-item" href="/pages/morningspecial.html">Morning Special</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pages/about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pages/review.html">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pages/contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ourteam.html">Our Team</a>
+                    </li>
+                     <!-- Kept only the Login Link -->
+                <li class="nav-item">
+                    <a class="nav-link auth-toggle" href="/pages/login.html" data-tab="login">Login</a>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 about-container">
+                <div class="about-header">
+                    <h2>About Sweet Delights</h2>
+                    <p>Our story, our passion, our cookies</p>
+                </div>
+
+                <div class="about-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-book-open"></i>
+                        Our Story
+                    </h3>
+                    <div class="row align-items-center">
+                        <div class="col-md-6 mb-4 mb-md-0">
+                            <div class="about-image">
+                                <img src="/images/Style Cookies & Brownies.jpg" alt="Sweet Delights Bakery">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <p>Sweet Delights Bakery started in 2020 as a small home-based business driven by our founder's passion for baking. What began as weekend cookie sales at the local farmers market quickly grew into a beloved community bakery.</p>
+                            <p>Our journey has been guided by one simple principle: create delicious treats that bring joy to people's lives using only the finest ingredients and time-honored recipes with a modern twist.</p>
+                            <p>Today, we're proud to offer a wide selection of artisanal cookies, brownies, and cheesecakes that continue to delight our customers, while maintaining the same care and attention to detail that went into our very first batch of cookies.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-history"></i>
+                        Our Journey
+                    </h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot">
+                                <i class="fas fa-cookie"></i>
+                            </div>
+                            <div class="timeline-date">2020</div>
+                            <div class="timeline-content">
+                                <h5 class="timeline-title">The Beginning</h5>
+                                <p>Started as a home kitchen operation selling at local farmers markets with just three cookie varieties.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <div class="timeline-date">2021</div>
+                            <div class="timeline-content">
+                                <h5 class="timeline-title">First Bakery Shop</h5>
+                                <p>Opened our first small bakery location downtown with an expanded menu featuring our now-famous red velvet cookies.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="timeline-date">2022</div>
+                            <div class="timeline-content">
+                                <h5 class="timeline-title">Local Recognition</h5>
+                                <p>Won "Best Bakery" award in the city's annual food competition, putting us on the map for cookie lovers everywhere.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">
+                                <i class="fas fa-expand-alt"></i>
+                            </div>
+                            <div class="timeline-date">2023</div>
+                            <div class="timeline-content">
+                                <h5 class="timeline-title">Expansion</h5>
+                                <p>Expanded to our current larger location with on-site baking facilities and a cozy café area where customers can enjoy fresh treats.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="timeline-date">2024</div>
+                            <div class="timeline-content">
+                                <h5 class="timeline-title">Online Presence</h5>
+                                <p>Launched our online ordering platform, allowing cookie enthusiasts to enjoy our treats delivered fresh to their doorstep.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-heart"></i>
+                        Our Values
+                    </h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="value-card">
+                                <div class="value-icon">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <h4 class="value-title">Quality Ingredients</h4>
+                                <p>We source only premium ingredients, from Belgian chocolate to locally produced butter and farm-fresh eggs.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="value-card">
+                                <div class="value-icon">
+                                    <i class="fas fa-hands"></i>
+                                </div>
+                                <h4 class="value-title">Handcrafted Care</h4>
+                                <p>Every cookie is handmade with attention to detail and crafted with the same love as if we were baking for our own family.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="value-card">
+                                <div class="value-icon">
+                                    <i class="fas fa-recycle"></i>
+                                </div>
+                                <h4 class="value-title">Sustainability</h4>
+                                <p>From eco-friendly packaging to reducing food waste, we're committed to minimizing our environmental footprint.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="value-card">
+                                <div class="value-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <h4 class="value-title">Community Focus</h4>
+                                <p>We actively support local causes and believe in giving back to the community that has supported us.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="value-card">
+                                <div class="value-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <h4 class="value-title">Innovation</h4>
+                                <p>While respecting tradition, we're always exploring new flavors and techniques to surprise and delight our customers.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="value-card">
+                                <div class="value-icon">
+                                    <i class="fas fa-smile"></i>
+                                </div>
+                                <h4 class="value-title">Customer Joy</h4>
+                                <p>We measure our success by the smiles on our customers' faces and the joy our treats bring to special moments.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-chart-pie"></i>
+                        Sweet Stats
+                    </h3>
+                    <div class="row">
+                        <div class="col-md-3 col-6 mb-4">
+                            <div class="stats-card">
+                                <div class="stats-number">15+</div>
+                                <div class="stats-title">Cookie Varieties</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 mb-4">
+                            <div class="stats-card">
+                                <div class="stats-number">5,000+</div>
+                                <div class="stats-title">Cookies Baked Weekly</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 mb-4">
+                            <div class="stats-card">
+                                <div class="stats-number">12</div>
+                                <div class="stats-title">Team Members</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 mb-4">
+                            <div class="stats-card">
+                                <div class="stats-number">98%</div>
+                                <div class="stats-title">Customer Satisfaction</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-question-circle"></i>
+                        Frequently Asked Questions
+                    </h3>
+                    <div class="faq-item active">
+                        <div class="faq-question">
+                            Do you offer gluten-free or vegan options?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Yes! We have a growing selection of both gluten-free and vegan cookies. Our Chocolate Chip and Red Velvet cookies are available in gluten-free versions, while our Oatmeal Raisin and Dark Chocolate cookies can be made vegan. Just ask our staff about today's available options.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Can I place custom orders for special events?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Absolutely! We love creating custom cookie arrangements for special occasions. For weddings, corporate events, or any celebration, we can create personalized cookie boxes or platters. Please contact us at least 48 hours in advance for custom orders.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How fresh are your cookies?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            All our cookies are baked fresh daily. We never sell cookies that are more than 24 hours old. Any unsold cookies at the end of the day are donated to local food banks and community organizations.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Do you ship your cookies nationwide?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Yes! We offer nationwide shipping with special packaging to ensure your cookies arrive fresh and intact. Standard shipping takes 2-3 business days, and we also offer expedited options. Check our online store for all shipping details.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5">
+                    <h3 class="mb-4">Visit Us Today</h3>
+                    <p class="mb-4">We'd love to welcome you to our bakery. Come experience the warm atmosphere and delicious aromas for yourself!</p>
+                    <a href="/pages/contact.html" class="nav-btn">
+                        <i class="fas fa-map-marker-alt me-2"></i>Find Our Location
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-section">
+        <h3 class="section-title">
+            <i class="fas fa-hashtag"></i>
+            Connect With Us
+        </h3>
+        <p class="text-center mb-4">Follow us on social media for daily updates, special promotions, and behind-the-scenes content!</p>
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-8 text-center">
+                <div class="social-connect">
+                    <a href="https://www.facebook.com/sweetdelightsbakery" target="_blank" class="social-link">
+                        <div class="value-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                        <h5>Facebook</h5>
+                        <p>@sweetdelightsbakery</p>
+                    </a>
+                    <a href="https://www.instagram.com/sweetdelights_cookies" target="_blank" class="social-link">
+                        <div class="value-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <h5>Instagram</h5>
+                        <p>@sweetdelights_cookies</p>
+                    </a>
+                    <a href="https://twitter.com/sweetdelights" target="_blank" class="social-link">
+                        <div class="value-icon">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <h5>Twitter</h5>
+                        <p>@sweetdelights</p>
+                    </a>
+                    <a href="https://pinterest.com/sweetdelightsbakery" target="_blank" class="social-link">
+                        <div class="value-icon">
+                            <i class="fab fa-pinterest"></i>
+                        </div>
+                        <h5>Pinterest</h5>
+                        <p>@sweetdelightsbakery</p>
+                    </a>
+                    <a href="https://www.youtube.com/channel/sweetdelights" target="_blank" class="social-link">
+                        <div class="value-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <h5>YouTube</h5>
+                        <p>Sweet Delights Bakery</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer  -->
+<footer class="py-4" style="background-color: #4a2c2a; border-top: 3px solid #D4A373;">
+    <div class="container">
+        <div class="text-center mt-3">
+            <p style="color: #85586F; font-size: 14px; font-family: 'Poppins', sans-serif;">&copy; 2025 Cookie. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Page JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ toggle functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentElement;
+                    const isActive = faqItem.classList.contains('active');
+                    
+                    // Close all FAQ items
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Open the clicked FAQ item if it was not active
+                    if (!isActive) {
+                        faqItem.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
