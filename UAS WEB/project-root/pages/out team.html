@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Cookies</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/ini.css">
+    <style>
+        /* Team-specific styles */
+        .team-section {
+            padding: 80px 0;
+            background-color: #faf6f1;
+        }
+        
+        .team-member {
+            margin-bottom: 40px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .member-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 3px solid #D4A373;
+        }
+        
+        .member-info {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .member-name {
+            color: #4a2c2a;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .member-title {
+            color: #85586F;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .member-bio {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            margin: 0 5px;
+            color: #fff;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links .facebook {
+            background-color: #3b5998;
+        }
+        
+        .social-links .instagram {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+        
+        .social-links .twitter {
+            background-color: #1da1f2;
+        }
+        
+        .page-header {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/images/Chunky\ Cookies.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        
+        .page-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .page-subtitle {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .team-quote {
+            font-style: italic;
+            font-size: 24px;
+            color: #85586F;
+            text-align: center;
+            margin: 40px 0;
+            padding: 20px;
+            background-color: rgba(212, 163, 115, 0.1);
+            border-left: 5px solid #D4A373;
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="100">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="/#hero">COOKIES</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#hero">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button" data-bs-toggle="dropdown">
+                            Menu
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+                            <li><a class="dropdown-item" href="/components/signature.html">Signature Items</a></li>
+                            <li><a class="dropdown-item" href="/pages/brownie.html">Soft Brownies</a></li>
+                            <li><a class="dropdown-item" href="/pages/cheesecake.html">Sweet Cheesecake</a></li>
+                            <li><a class="dropdown-item" href="/pages/menuspecial.html">Morning Special</a></li>
+                        </ul>
+                    </li>    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pages/about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pages/review.html">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pages/contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/ourteam.html">Our Team</a>
+                    </li>
+                    <!-- Kept only the Login Link -->
+                    <li class="nav-item">
+                        <a class="nav-link auth-toggle" href="/pages/login.html" data-tab="login">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">Meet Our Team</h1>
+            <p class="page-subtitle">The talented bakers and passionate cookie enthusiasts behind every delicious creation</p>
+        </div>
+    </header>
+
+    <!-- Team Quote -->
+    <div class="container">
+        <div class="team-quote">
+            "Our passion is baking the perfect cookie - one that brings joy, comfort, and a little bit of magic to every bite."
+        </div>
+    </div>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="row">
+                <!-- Team Member 1 -->
+                <div class="col-md-4">
+                    <div class="team-member">
+                        <img src="/api/placeholder/400/300" alt="Head Baker" class="member-img">
+                        <div class="member-info">
+                            <h3 class="member-name">Emma Thompson</h3>
+                            <p class="member-title">Head Baker & Founder</p>
+                            <p class="member-bio">With over 15 years of experience in pastry arts, Emma founded Cookies with a mission to create the perfect balance of chewy and crispy cookies. Her Red Velvet Cookie recipe has won multiple local awards.</p>
+                            <div class="social-links">
+                                <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="col-md-4">
+                    <div class="team-member">
+                        <img src="/api/placeholder/400/300" alt="Pastry Chef" class="member-img">
+                        <div class="member-info">
+                            <h3 class="member-name">Daniel Rodriguez</h3>
+                            <p class="member-title">Pastry Chef</p>
+                            <p class="member-bio">Daniel brings creativity and precision to our kitchen. A graduate from Le Cordon Bleu, he specializes in our brownies and cheesecakes, constantly experimenting with new flavors and techniques to delight our customers.</p>
+                            <div class="social-links">
+                                <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="col-md-4">
+                    <div class="team-member">
+                        <img src="/api/placeholder/400/300" alt="Customer Experience Manager" class="member-img">
+                        <div class="member-info">
+                            <h3 class="member-name">Sophia Chen</h3>
+                            <p class="member-title">Customer Experience Manager</p>
+                            <p class="member-bio">Sophia ensures that every visit to Cookies is memorable. With her warm personality and attention to detail, she manages our front-of-house operations and specializes in creating custom orders for special occasions.</p>
+                            <div class="social-links">
+                                <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Our Team Section -->
+    <section class="py-5" style="background-color: #4a2c2a;">
+        <div class="container text-center">
+            <h2 class="mb-4" style="color: #fff;">Join Our Team</h2>
+            <p style="color: #eee; max-width: 800px; margin: 0 auto 30px;">Passionate about baking? Love creating sweet experiences? We're always looking for talented individuals to join our cookie family!</p>
+            <a href="/pages/contact.html" class="btn btn-outline-light px-4 py-2">View Open Positions</a>
+        </div>
+    </section>
+
+    <!-- Footer  -->
+    <footer class="py-4" style="background-color: #4a2c2a; border-top: 3px solid #D4A373;">
+        <div class="container">
+            <div class="text-center mt-3">
+                <p style="color: #85586F; font-size: 14px; font-family: 'Poppins', sans-serif;">&copy; 2025 Cookie. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Interactive features -->
+    <script src="/js/main.js"></script>
+</body>
+</html>
